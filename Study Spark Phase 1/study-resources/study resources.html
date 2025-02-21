@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Spark</title>
+    <link rel="stylesheet" href="study resources-styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo-title">
+            <img src="logo.png" alt="Logo">
+            <span>Study Spark</span>
+        </div>
+        <div class="nav">
+            <a href="homepage.html">Home</a>
+            <a href="#">Resources</a>
+            <a href="#">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Welcome to Study Spark</h2>
+        <p>Your hub for study materials and progress tracking.</p>
+        
+        <h3>Select Your Branch</h3>
+        <button class="button" onclick="showYears('Computer Engineering')">CE</button>
+        <button class="button" onclick="showYears('Computer Science')">CS</button>
+        <button class="button" onclick="showYears('Electronics & Communication')">ENTC</button>
+        <button class="button" onclick="showYears('Mechanical Engineering')">Mechanical</button>
+        
+        <div id="years-container"></div>
+        <div id="subjects-container"></div>
+        <div id="materials-container"></div>
+    </div>
+
+    
+    <script src="study resources-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Guide</title>
+    <link rel="stylesheet" href="meditation-styles.css">
+</head>
+<body>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="homepage.html">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Meditation</a>
+    </div>
+
+    <!-- Meditation Guide -->
+    <div class="container">
+        <div class="section">
+            <h1>🧘 Meditation Guide</h1>
+            <p>Follow these simple steps for a peaceful meditation session.</p>
+
+            <div class="step-card">
+                <h2>Step 1: Find a Quiet Place</h2>
+                <p>Choose a calm and quiet place where you won’t be disturbed. Sit comfortably with your back straight.</p>
+            </div>
+
+            <div class="step-card">
+                <h2>Step 2: Focus on Your Breath</h2>
+                <p>Close your eyes and take slow, deep breaths. Inhale through your nose, hold for a few seconds, and exhale through your mouth.</p>
+            </div>
+
+            <div class="step-card">
+                <h2>Step 3: Clear Your Mind</h2>
+                <p>Let go of any thoughts. If a thought comes, acknowledge it and return your focus to your breath.</p>
+            </div>
+
+            <div class="step-card">
+                <h2>Step 4: Practice Gratitude</h2>
+                <p>End your session by feeling grateful for the moment and setting a positive intention for the day.</p>
+            </div>
+        </div>
+
+        <!-- Meditation Timer -->
+        <div class="section">
+            <h2>⏳ Meditation Timer</h2>
+            <div class="timer-container">
+                <div class="timer-box">
+                    <span id="time">00:00</span>
+                </div>
+                <div class="timer-buttons">
+                    <button class="start-btn" onclick="startTimer()">Start</button>
+                    <button class="stop-btn" onclick="stopTimer()">Stop</button>
+                    <button class="reset-btn" onclick="resetTimer()">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="section reviews">
+            <h2>🌟 User Reviews</h2>
+
+            <div class="review-card">
+                <h3>Amit Sharma</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>This meditation guide helped me relax and improve my focus. Highly recommended!</p>
+            </div>
+
+            <div class="review-card">
+                <h3>Pooja Verma</h3>
+                <div class="stars">⭐⭐⭐⭐</div>
+                <p>Great techniques! The timer is also very useful for beginners like me.</p>
+            </div>
+
+            <div class="review-card">
+                <h3>Rahul Mehta</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>Simple, effective, and beautifully designed. Loved the dark mode feature!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dark Mode & Timer -->
+    
+    <script src="meditation-script.js"></script>
+
+</body>
+</html>
