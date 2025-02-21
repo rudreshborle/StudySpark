@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <style>
+        body {
+            background-color: #1E1E2E;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: opacity 0.3s;
+        }
+        .nav a:hover {
+            opacity: 0.7;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            border-radius: 0 20px 20px 0;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .sidebar h2 {
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .sidebar ul li:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .content {
+            margin-left: 270px;
+            padding: 40px;
+            flex: 1;
+        }
+        .blogs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .blog-card {
+            background: linear-gradient(135deg, #3A3B5A, #28293D);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s, max-height 0.5s ease-in-out;
+            overflow: hidden;
+            position: relative;
+            animation: fadeIn 0.5s ease-in-out;
+            cursor: pointer;
+            max-height: 80px;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.7);
+        }
+        .blog-card.expanded {
+            max-height: 500px;
+        }
+        .blog-card h3 {
+            color: white;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .blog-card p {
+            color: #E0E0E0;
+            font-size: 16px;
+            text-align: left;
+        }
+        .full-content {
+            display: none;
+        }
+        .blog-card.expanded .full-content {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Study Spark</h1>
+        <div class="nav">
+            <a href="homepage.html">Home</a>
+            <a href="#">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="sidebar">
+            <h2>Sections</h2>
+            <ul>
+                <li onclick="showBlogs('scholarship')">Scholarship</li>
+                <li onclick="showBlogs('sports')">Sports</li>
+                <li onclick="showBlogs('internships')">Internships</li>
+                <li onclick="showBlogs('exams')">Exam Dates</li>
+                <li onclick="showBlogs('updates')">Updates</li>
+                <li onclick="showBlogs('clglist')">College List Updates</li>
+                <li onclick="showBlogs('ai')">AI</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Blogs</h1>
+            <div id="blogs" class="blogs-container"></div>
+        </div>
+    </div>
+    <script>
+        const blogData = {
+            scholarship: [
+                { title: "Scholarship A", description: "Details about Scholarship A.", content: "Full information about Scholarship A, including eligibility, benefits, and application process." },
+                { title: "Scholarship B", description: "Details about Scholarship B.", content: "Comprehensive guide on Scholarship B." }
+            ],
+            sports: [
+                { title: "Upcoming Sports Events", description: "Check out the upcoming matches.", content: "Detailed schedule and highlights of upcoming sports events." },
+                { title: "Training Tips", description: "Best ways to improve your fitness.", content: "Step-by-step guide to boost your athletic performance." }
+            ],
+            internships: [
+                { title: "Internship Opportunities", description: "Best internships available for students.", content: "A guide to finding and applying for the best internship programs." },
+                { title: "How to Land an Internship", description: "Steps to secure an internship.", content: "Tips on building a strong resume, writing a cover letter, and acing the interview." }
+            ],
+            exams: [
+                { title: "Upcoming Exam Dates", description: "Important exam schedules.", content: "A comprehensive list of upcoming exams and registration details." }
+            ],
+            updates: [
+                { title: "Campus Updates", description: "Latest news from the university.", content: "Recent updates on events, policies, and more." }
+            ],
+            clglist: [
+                { title: "Top Colleges", description: "Updated list of best colleges.", content: "Ranking and details of top colleges for various courses." }
+            ]
+        };
+        function showBlogs(section) {
+            const blogsContainer = document.getElementById("blogs");
+            blogsContainer.innerHTML = "";
+            if (blogData[section]) {
+                blogData[section].forEach(blog => {
+                    const blogCard = document.createElement("div");
+                    blogCard.classList.add("blog-card");
+                    blogCard.innerHTML = `<h3>${blog.title}</h3><p>${blog.description}</p><div class='full-content'><p>${blog.content}</p></div>`;
+                    blogCard.addEventListener("click", function() {
+                        this.classList.toggle("expanded");
+                    });
+                    blogsContainer.appendChild(blogCard);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
