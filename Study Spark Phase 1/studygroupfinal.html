@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Group - Select Branch</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #f4f4f4, #d1c4e9);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #6a0dad;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        h1, h2 {
+            margin: 20px 0;
+            color: #4a148c;
+        }
+        .branch-selection, .years, .subjects, .group-options {
+            margin-top: 50px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .branches button, .years button, .subjects button, .group-options button {
+            display: block;
+            width: 250px;
+            margin: 10px auto;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            background: linear-gradient(135deg, #7b1fa2, #ab47bc);
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+        .branches button:hover, .years button:hover, .subjects button:hover, .group-options button:hover {
+            background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .themed-button {
+            background: linear-gradient(135deg, #1e88e5, #42a5f5);
+        }
+        .themed-button:hover {
+            background: linear-gradient(135deg, #1565c0, #1e88e5);
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .years, .subjects, .group-options {
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .branches button, .years button, .subjects button, .group-options button {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Study Spark</div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="branch-selection" id="branchSelection">
+        <h1>Select Your Branch</h1>
+        <button class="themed-button" data-branch="Computer Engineering">Computer Engineering</button>
+        <button class="themed-button" data-branch="Mechanical Engineering">Mechanical Engineering</button>
+        <button class="themed-button" data-branch="Electrical Engineering">Electrical Engineering</button>
+        <button class="themed-button" data-branch="Civil Engineering">Civil Engineering</button>
+    </section>
+    
+    <section class="years" id="yearSelection">
+        <h2>Select Your Year</h2>
+        <button data-year="1st Year">1st Year</button>
+        <button data-year="2nd Year">2nd Year</button>
+        <button data-year="3rd Year">3rd Year</button>
+        <button data-year="4th Year">4th Year</button>
+    </section>
+
+    <section class="subjects" id="subjectSelection">
+        <h2>Select Your Subject</h2>
+        <button data-subject="Mathematics">Mathematics</button>
+        <button data-subject="Physics">Physics</button>
+        <button data-subject="Computer Science">Computer Science</button>
+        <button data-subject="Mechanical Design">Mechanical Design</button>
+    </section>
+
+    <section class="group-options" id="groupOptions">
+        <h2>Study Group Options</h2>
+        <button>Join a Group</button>
+        <button>Create a Group</button>
+        <button onclick="window.location.href='https://meet.google.com'">Join Google Meet</button>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const branchButtons = document.querySelectorAll(".branch-selection button");
+            const yearButtons = document.querySelectorAll(".years button");
+            const subjectButtons = document.querySelectorAll(".subjects button");
+            const branchSection = document.getElementById("branchSelection");
+            const yearSection = document.getElementById("yearSelection");
+            const subjectSection = document.getElementById("subjectSelection");
+            const groupOptions = document.getElementById("groupOptions");
+
+            branchButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    branchSection.style.display = "none";
+                    yearSection.style.display = "block";
+                });
+            });
+
+            yearButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    yearSection.style.display = "none";
+                    subjectSection.style.display = "block";
+                });
+            });
+
+            subjectButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    subjectSection.style.display = "none";
+                    groupOptions.style.display = "block";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
