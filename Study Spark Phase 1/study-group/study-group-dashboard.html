@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Group - Select Branch</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6a0dad;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .branch-selection, .years, .subjects, .group-options {
+            margin-top: 50px;
+        }
+        .branches button, .years button, .subjects button, .group-options button {
+            display: block;
+            width: 250px;
+            margin: 10px auto;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #6a0dad;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .branches button:hover, .years button:hover, .subjects button:hover, .group-options button:hover {
+            background-color: #540b9b;
+        }
+        .years, .subjects, .group-options {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Study Spark</div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html" style="color: white; text-decoration: none;">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="branch-selection" id="branchSelection">
+        <h1>Select Your Branch</h1>
+        <button data-branch="Computer Engineering">Computer Engineering</button>
+        <button data-branch="Mechanical Engineering">Mechanical Engineering</button>
+        <button data-branch="Electrical Engineering">Electrical Engineering</button>
+        <button data-branch="Civil Engineering">Civil Engineering</button>
+    </section>
+    
+    <section class="years" id="yearSelection">
+        <h2>Select Your Year</h2>
+        <button data-year="1st Year">1st Year</button>
+        <button data-year="2nd Year">2nd Year</button>
+        <button data-year="3rd Year">3rd Year</button>
+        <button data-year="4th Year">4th Year</button>
+    </section>
+
+    <section class="subjects" id="subjectSelection">
+        <h2>Select Your Subject</h2>
+        <button data-subject="Mathematics">Mathematics</button>
+        <button data-subject="Physics">Physics</button>
+        <button data-subject="Computer Science">Computer Science</button>
+        <button data-subject="Mechanical Design">Mechanical Design</button>
+    </section>
+
+    <section class="group-options" id="groupOptions">
+        <h2>Study Group Options</h2>
+        <button>Join a Group</button>
+        <button>Create a Group</button>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const branchButtons = document.querySelectorAll(".branch-selection button");
+            const yearButtons = document.querySelectorAll(".years button");
+            const subjectButtons = document.querySelectorAll(".subjects button");
+            const branchSection = document.getElementById("branchSelection");
+            const yearSection = document.getElementById("yearSelection");
+            const subjectSection = document.getElementById("subjectSelection");
+            const groupOptions = document.getElementById("groupOptions");
+
+            branchButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    branchSection.style.display = "none";
+                    yearSection.style.display = "block";
+                });
+            });
+
+            yearButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    yearSection.style.display = "none";
+                    subjectSection.style.display = "block";
+                });
+            });
+
+            subjectButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    subjectSection.style.display = "none";
+                    groupOptions.style.display = "block";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
