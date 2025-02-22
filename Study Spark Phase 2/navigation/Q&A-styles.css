@@ -1,85 +1,105 @@
+:root {
+    --dark-navy: #02031a;
+    --dark-red: #7b1e36;
+    --crimson: #b52c3e;
+    --salmon: #df6b5b;
+    --peach: #e48a6f;
+    --white: #ffffff;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #0d0d2b;
-            color: white;
-            text-align: center;
-            transition: 0.3s;
-            overflow-y: auto;
-        }
-        .dark-mode {
-            background-color: #1a1a2e;
-            color: #ccc;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: linear-gradient(90deg, #16213e, #0f3460);
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .moon-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .ask-section {
-            padding: 40px;
-        }
-        .question-box {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background: #1a1a2e;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .question-box h2 {
-            color: #ff416c;
-        }
-        .question-box textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: none;
-        }
-        .submit-btn {
-            background: linear-gradient(45deg, #ff416c, #ff4b2b);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        footer {
-            background: linear-gradient(90deg, #16213e, #0f3460);
-            padding: 10px;
-            margin-top: 20px;
-        }
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-navy);
+    color: var(--white);
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: var(--dark-red);
+    padding: 20px;
+    font-size: 1.8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.moon-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--white);
+}
+
+/* Question Section */
+.ask-section {
+    margin-top: 50px;
+}
+
+.question-box {
+    background: var(--crimson);
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: var(--salmon);
+    color: var(--dark-navy);
+    font-size: 1.2em;
+    resize: none;
+}
+
+.submit-btn {
+    display: inline-block;
+    background: var(--peach);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--salmon);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--dark-red);
+}
