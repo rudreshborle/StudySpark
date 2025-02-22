@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find a Teacher</title>
+    <title>Find a Teacher - Contact</title>
     <link rel="stylesheet" href="findteacher-styles.css">
 </head>
 <body>
@@ -18,30 +18,28 @@
             </ul>
         </nav>
     </header>
-    
+
     <section class="hero">
         <h1>Find a Teacher</h1>
         <p>Connect with experts to get your doubts resolved.</p>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Search for a teacher...">
-        </div>
-        <div class="sort-container">
-            <select id="sort">
-                <option value="name">Sort by Name</option>
-                <option value="subject">Sort by Subject</option>
-                <option value="experience">Sort by Experience</option>
-            </select>
-        </div>
     </section>
-    
-    <section id="teacher-list" class="content">
-        
-    </section>
-    
+
+    <section id="teacher-list" class="content"></section>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <h3 id="contactName"></h3>
+            <p id="contactEmail"></p>
+            <p id="contactPhone"></p>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2025 Student Helper. All rights reserved.</p>
     </footer>
 
-    <script src="findteacher-script.js"></script>
+<script src="findteacher-script.js"></script>
 </body>
 </html>
+
