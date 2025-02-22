@@ -1,20 +1,16 @@
 
-        // Import Firebase
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
         import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 
-        // Firebase Configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDqYydmWOGMy0pwSBCHcyI19rqBdu4H5-I",
             authDomain: "student-innovation-c1428.firebaseapp.com",
             projectId: "student-innovation-c1428",
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // Fetch and Display Teachers from Firestore
         async function fetchAndDisplayTeachers() {
             const teacherList = document.getElementById("teacher-list");
             teacherList.innerHTML = "<p>Loading...</p>";
@@ -36,7 +32,6 @@
                     <div class="teacher-card">
                         <h3>${t.name}</h3>
                         <p><strong>Subject:</strong> ${t.subject}</p>
-                        <p><strong>Experience:</strong> ${t.experience} years</p>
                         <button onclick="showContact('${t.name}', '${t.email}', '${t.phone || "Not Available"}')">Contact</button>
                     </div>
                 `).join('');
@@ -46,7 +41,6 @@
             }
         }
 
-        // Function to Show Contact Modal
         window.showContact = (name, email, phone) => {
             document.getElementById("contactName").innerText = name;
             document.getElementById("contactEmail").innerText = `Email: ${email}`;
@@ -58,5 +52,4 @@
             document.getElementById("contactModal").style.display = "none";
         };
 
-        // Load Teachers on Page Load
         document.addEventListener("DOMContentLoaded", fetchAndDisplayTeachers);
