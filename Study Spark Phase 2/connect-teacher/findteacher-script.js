@@ -1,35 +1,26 @@
 
-const teachers = [
-{ name: 'Rajesh Kumar', status: 'online', email: 'rajesh.kumar@example.com', phone: '+91 9876543210', image: 'images/teacher1.jpg' },
-{ name: 'Anita Sharma', status: 'offline', email: 'anita.sharma@example.com', phone: '+91 9123456789', image: 'images/teacher2.jpg' },
-{ name: 'Vikram Patel', status: 'online', email: 'vikram.patel@example.com', phone: '+91 8765432109', image: 'images/teacher3.jpg' },
-{ name: 'Pooja Singh', status: 'online', email: 'pooja.singh@example.com', phone: '+91 9988776655', image: 'images/teacher4.jpg' },
-{ name: 'Suresh Iyer', status: 'offline', email: 'suresh.iyer@example.com', phone: '+91 9090909090', image: 'images/teacher5.jpg' }
-];
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #09122C; color: #FFFFFF; line-height: 1.6; }
+        header { background-color: #872341; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #FFFFFF; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { text-decoration: none; color: #FFFFFF; padding: 5px 10px; border-radius: 5px; transition: background 0.3s; }
+        nav ul li a:hover { background-color: #BE3144; }
 
+        .hero { text-align: center; padding: 60px 20px; background-color: #BE3144; color: #FFFFFF; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; }
 
-const teacherList = document.getElementById('teacher-list');
+        .content { padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background-color: #E17564; border-radius: 10px; padding: 20px; color: #09122C; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
 
-function displayTeachers(data) {
-teacherList.innerHTML = data.map(t => `
-<div class="teacher-card">
-    <div class="status ${t.status}"></div>
-    <img src="${t.image}" alt="${t.name}">
-    <h3>${t.name}</h3>
-    <button onclick="showContact('${t.name}', '${t.email}', '${t.phone}')">Contact</button>
-</div>
-`).join('');
-}
+        .card img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
 
-function showContact(name, email, phone) {
-    document.getElementById('contactName').textContent = name;
-    document.getElementById('contactEmail').textContent = `Email: ${email}`;
-    document.getElementById('contactPhone').textContent = `Phone: ${phone}`;
-    document.getElementById('contactModal').style.display = 'flex';
-}
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; }
+        .modal-content { background-color: #FFFFFF; padding: 20px; border-radius: 10px; width: 300px; text-align: center; color: #09122C; }
+        .close-btn { margin-top: 10px; padding: 8px 15px; background-color: #BE3144; color: #FFFFFF; border: none; border-radius: 5px; cursor: pointer; }
+        .close-btn:hover { background-color: #872341; }
 
-function closeModal() {
-    document.getElementById('contactModal').style.display = 'none';
-}
-
-displayTeachers(teachers);
+        footer { text-align: center; padding: 15px 0; background-color: #872341; color: #FFFFFF; margin-top: 40px; }
