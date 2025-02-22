@@ -18,20 +18,23 @@
             background-color: #6a0dad;
             color: white;
             padding: 15px 0;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
             letter-spacing: 2px;
+            margin-left: 20px;
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
         }
         nav ul li {
             margin: 0 15px;
@@ -53,7 +56,7 @@
             margin-top: 50px;
             animation: fadeIn 1s ease-in-out;
         }
-        .branches button, .years button, .subjects button, .group-options button {
+        .branches button, .years button, .subjects button, .group-options button, .themed-button {
             display: block;
             width: 250px;
             margin: 10px auto;
@@ -64,20 +67,19 @@
             color: white;
             cursor: pointer;
             border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s, text-shadow 0.3s;
         }
-        .branches button:hover, .years button:hover, .subjects button:hover, .group-options button:hover {
+        .branches button:hover, .years button:hover, .subjects button:hover, .group-options button:hover, .themed-button:hover {
             background: linear-gradient(135deg, #6a1b9a, #8e24aa);
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px rgba(138, 43, 226, 0.7);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
         .themed-button {
             background: linear-gradient(135deg, #1e88e5, #42a5f5);
         }
         .themed-button:hover {
             background: linear-gradient(135deg, #1565c0, #1e88e5);
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
         .years, .subjects, .group-options {
             display: none;
@@ -90,19 +92,25 @@
             .branches button, .years button, .subjects button, .group-options button {
                 width: 80%;
             }
+            header {
+                flex-direction: column;
+            }
+            .logo {
+                margin: 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Study Spark</div>
         <nav>
             <ul>
                 <li><a href="homepage.html">Home</a></li>
             </ul>
         </nav>
+        <div class="logo">Study Spark</div>
     </header>
-    
+
     <section class="branch-selection" id="branchSelection">
         <h1>Select Your Branch</h1>
         <button class="themed-button" data-branch="Computer Engineering">Computer Engineering</button>
@@ -110,7 +118,7 @@
         <button class="themed-button" data-branch="Electrical Engineering">Electrical Engineering</button>
         <button class="themed-button" data-branch="Civil Engineering">Civil Engineering</button>
     </section>
-    
+
     <section class="years" id="yearSelection">
         <h2>Select Your Year</h2>
         <button data-year="1st Year">1st Year</button>
@@ -133,7 +141,7 @@
         <button>Create a Group</button>
         <button onclick="window.location.href='https://meet.google.com'">Join Google Meet</button>
     </section>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const branchButtons = document.querySelectorAll(".branch-selection button");
@@ -168,3 +176,4 @@
     </script>
 </body>
 </html>
+
