@@ -1,68 +1,98 @@
+:root {
+    --dark-navy: #02031a;
+    --dark-red: #7b1e36;
+    --crimson: #b52c3e;
+    --salmon: #df6b5b;
+    --peach: #e48a6f;
+    --white: #ffffff;
+}
 
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0d0d2b;
-    color: white;
-    text-align: center;
-    transition: 0.3s;
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-navy);
+    color: var(--white);
 }
-.dark-mode {
-    background-color: #1a1a2e;
-    color: #ccc;
-}
+
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background: linear-gradient(90deg, #16213e, #0f3460);
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+    background-color: var(--dark-red);
+    padding: 15px 20px;
 }
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Navigation */
 nav ul {
     list-style: none;
-    display: flex;
+    margin: 0;
     padding: 0;
+    display: flex;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background 0.3s;
+    font-size: 1.2em;
 }
+
+nav ul li a:hover {
+    color: var(--salmon);
+}
+
+/* Dark Mode Button */
 .moon-btn {
     background: none;
     border: none;
-    color: white;
-    font-size: 24px;
+    font-size: 1.5em;
     cursor: pointer;
+    color: var(--white);
 }
+
+/* Features Section */
 .features {
-    padding: 40px;
+    text-align: center;
+    padding: 50px 20px;
 }
+
+h1 {
+    color: var(--salmon);
+}
+
 .feature-list {
-    text-align: left;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background: #1a1a2e;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    list-style: none;
+    padding: 0;
 }
+
 .feature-list li {
-    padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--crimson);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background 0.3s;
 }
-.feature-list li:last-child {
-    border-bottom: none;
+
+.feature-list li:hover {
+    background: var(--salmon);
 }
+
+/* Footer */
 footer {
-    background: linear-gradient(90deg, #16213e, #0f3460);
-    padding: 10px;
+    text-align: center;
+    padding: 15px;
+    background: var(--dark-red);
     margin-top: 20px;
 }
