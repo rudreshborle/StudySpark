@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Problem Solver</title>
+    <link rel="stylesheet" href="homepage-styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo-main.png" alt="Logo" class="logo-img">
+            Study spark
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="navigation/features.html">Features</a></li>
+                <li><a href="navigation/blog.html">Blogs</a></li>
+                <li><a href="navigation/contact.html">Contact</a></li>
+                <li><a href="navigation/about.html">About us</a></li>
+                <li><a href="navigation/Q&A.html">Q&A</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='auth/login.html'"><span>Login</span></button>
+            <button onclick="window.location.href='auth/signup.html'"><span>Sign Up</span></button>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <h1>Find Solutions to Your Problems</h1>
+        <p>Explore various resources to solve academic and technical issues.</p>
+        <a href="#explore" class="btn">Get Started</a>
+    </section>
+ 
+    <div class="slider-container">
+        <div class="slider">
+            <img src="slider1.jpg" alt="Slide 1">
+            <img src="slider2.jpg" alt="Slide 2">
+            <img src="slider3.jpg" alt="Slide 3">
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    
+    <section id="explore" class="content">
+        <div class="card main-card">
+            <h2>Study Group</h2>
+            <p>Study together to grow together.</p>
+            <a href="study-group/study-group.html" class="btn">Study Together</a>
+        </div>
+        
+        <section id="card-poster" class="content">
+            <div class="card card-poster">
+                <img src="poster.jpg" alt="Poster">
+        </section>
+        <div class="card main-card">
+            <h2>Connect With Teachers</h2>
+            <p>Get solution to your problems by connecting with your ideal teacher.</p>
+            <a href="connect-teacher/collegelist.html" class="btn">Connect With Teachers</a>
+        </div>
+        <div class="card">
+            <h2>Study Resources</h2>
+            <p>Effective study techniques and learning materials.</p>
+            <a href="study-resources/study resources.html" class="btn">Explore</a>
+        </div>
+        <div class="card">
+            <h2>Study Tools</h2>
+            <p>Boost productivity with the Pomodoro technique.</p>
+            <a href="study-tools/tools.html" class="btn">Explore</a>
+        </div>
+        <div class="card">
+            <h2>Meditation Section</h2>
+            <p>Find tools to solve complex math equations easily.</p>
+            <a href="student-health/meditation section.html" class="btn">start meditation</a>
+        </div>
+    </section>
+    <section id="additional-content" class="content">
+        <div class="card">
+            <img src="effective-study-techniques.jpg" alt="Effective Study Techniques">
+            <h2>Effective Study Techniques</h2>
+            <a href="study-technique.html" class="learn-more-button"></a>
+             <p>Learn strategies to enhance your concentration and retain knowledge better.</p>
+            <a href="exam preparation.html" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="time-management-for-students.jpg" alt="My Image">
+            <h2>Time Management for Students</h2>
+            <p>Organize your study schedule efficiently and boost productivity.</p>
+            <a href="time management.html" class="btn">Read More</a>
+        </div>
+        <div class="card">
+            <img src="exam-preparation-tips.jpg" alt="Exam Preparation Tips">
+            <h2>Exam Preparation Tips</h2>
+            <p>Get useful tips to prepare for exams effectively without stress.</p>
+            <a href="exam preparation.html" class="btn">Explore</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Student Helper. All rights reserved.</p>
+    </footer>
+    <script src="homepage-script.js"></script>
+</body>
+</html>

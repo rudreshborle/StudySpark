@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tools</title>
+    <link rel="stylesheet" href="tools-styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <a href="../homepage.html">Home</a>
+        <a href="pomodoro.html">Pomodoro Clock</a>
+    </div>
+
+    <h1>Study Tools</h1>
+    
+    <div class="container">
+        <div class="tool">
+            <h2>Pomodoro Clock</h2>
+            <p>Boost focus with the Pomodoro technique.</p>
+            <button class="button" onclick="openTool('pomodoro.html')">Open</button>
+        </div>
+        <div class="tool">
+            <h2>To-Do List</h2>
+            <p>Keep track of tasks and stay organized.</p>
+            <div class="todo-input">
+                <input type="text" id="todoInput" placeholder="Add a new task..." />
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="todoList"></ul>
+        </div>
+    </div>
+    
+    <script src="tools-script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Clock</title>
+    <link rel="stylesheet" href="pomodoro-styles.css">
+    
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleLightMode()">Toggle Light Mode</button>
+    <div class="header">
+        <a href="#">Home</a>
+        <a href="#">To-Do List</a>
+        <a href="#">Task Manager</a>
+    </div>
+    <h1>Pomodoro Clock</h1>
+    <div class="container">
+        <div class="clock-container">
+            <h2>Study Session</h2>
+            <div class="clock" id="study-timer">25:00</div>
+            <div class="buttons">
+                <button onclick="startStudyTimer()">Start</button>
+                <button onclick="pauseTimer('study')">Pause</button>
+                <button onclick="resetTimer('study')">Reset</button>
+            </div>
+        </div>
+        <div class="clock-container">
+            <h2>Break Session</h2>
+            <div class="clock" id="break-timer">05:00</div>
+            <div class="buttons">
+                <button onclick="startBreakTimer()">Start</button>
+                <button onclick="pauseTimer('break')">Pause</button>
+                <button onclick="resetTimer('break')">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="pomodoro-script.js"></script>
+    
+</body>
+</html>

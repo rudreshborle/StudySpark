@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Study Spark</h1>
+        <div class="nav">
+            <a href="../homepage.html">Home</a>
+            <a href="#">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="sidebar">
+            <h2>Sections</h2>
+            <ul>
+                <li onclick="showBlogs('scholarship')">Scholarship</li>
+                <li onclick="showBlogs('sports')">Sports</li>
+                <li onclick="showBlogs('internships')">Internships</li>
+                <li onclick="showBlogs('exams')">Exam Dates</li>
+                <li onclick="showBlogs('updates')">Updates</li>
+                <li onclick="showBlogs('clglist')">College List Updates</li>
+                <li onclick="showBlogs('ai')">AI</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Blogs</h1>
+            <div id="blogs" class="blogs-container"></div>
+        </div>
+    </div>
+    <script src="blog-script.js"></script>
+</body>
+</html>
