@@ -10,51 +10,43 @@
             measurementId: "G-15QEJW0K3Y"
         };
 
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const db = firebase.firestore();
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const loginForm = document.getElementById('loginForm');
-            const googleLoginButton = document.getElementById('google-login');
+// Login Function
+document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
 
-            loginForm.addEventListener('submit', handleLoginFormSubmit);
-            googleLoginButton.addEventListener('click', handleGoogleLogin);
+    const email = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-            auth.onAuthStateChanged(handleAuthStateChange);
+    auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            fetchUserProfile(user.uid);
+        })
+        .catch((error) => {
+            alert("Login Failed: " + error.message);
         });
+});
 
-        function handleLoginFormSubmit(e) {
-            e.preventDefault();
-            const email = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    alert("Login successful!");
-                    window.location.href = "dashboard.html"; // Redirect to dashboard
-                })
-                .catch((error) => {
-                    alert(error.message);
-                });
+// Fetch user profile from Firestore
+function fetchUserProfile(uid) {
+    db.collection('users').doc(uid).get().then((doc) => {
+        if (doc.exists) {
+            const userData = doc.data();
+            onUserLogin({
+                name: userData.name,
+                profilePic: userData.profilePic || 'default-profile.png'
+            });
+            // Redirect to Home Page after login
+            window.location.href = "home.html";
+        } else {
+            console.log("No user data found!");
         }
-
-        function handleGoogleLogin() {
-            const provider = new firebase.auth.GoogleAuthProvider();
-            auth.signInWithPopup(provider)
-                .then((result) => {
-                    const user = result.user;
-                    alert(`Welcome, ${user.displayName}`);
-                    window.location.href = "dashboard.html"; // Redirect to dashboard
-                })
-                .catch((error) => {
-                    alert(error.message);
-                });
-        }
-
-        function handleAuthStateChange(user) {
-            if (user) {
-                window.location.href = "dashboard.html"; // Redirect if logged in
-            }
-        }
+    }).catch((error) => {
+        console.log("Error fetching user data: ", error);
+    });
+}
