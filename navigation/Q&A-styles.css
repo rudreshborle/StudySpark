@@ -1,0 +1,105 @@
+:root {
+    --dark-navy: #02031a;
+    --dark-red: #7b1e36;
+    --crimson: #b52c3e;
+    --salmon: #df6b5b;
+    --peach: #e48a6f;
+    --white: #ffffff;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-navy);
+    color: var(--white);
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: var(--dark-red);
+    padding: 20px;
+    font-size: 1.8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.moon-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--white);
+}
+
+/* Question Section */
+.ask-section {
+    margin-top: 50px;
+}
+
+.question-box {
+    background: var(--crimson);
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: var(--salmon);
+    color: var(--dark-navy);
+    font-size: 1.2em;
+    resize: none;
+}
+
+.submit-btn {
+    display: inline-block;
+    background: var(--peach);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--salmon);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--dark-red);
+}

@@ -1,0 +1,74 @@
+:root {
+    --dark-navy: #02031a;
+    --dark-red: #7b1e36;
+    --crimson: #b52c3e;
+    --salmon: #df6b5b;
+    --peach: #e48a6f;
+    --white: #ffffff;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-navy);
+    color: var(--white);
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: var(--dark-red);
+    padding: 20px;
+    font-size: 1.8em;
+}
+
+/* Container */
+.container {
+    margin: 50px auto;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Contact Card */
+.card {
+    background: var(--crimson);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.card a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: var(--peach);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--salmon);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: var(--peach);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--dark-red);
+}

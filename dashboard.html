@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Study Spark</title>
+    <link rel="stylesheet" href="homepage-styles.css">
+    <style>
+        .dashboard-container {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .user-welcome {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .dashboard-card h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo-main.png" alt="Logo" class="logo-img">
+            Study Spark
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="navigation/features.html">Features</a></li>
+                <li><a href="navigation/blog.html">Blogs</a></li>
+                <li><a href="navigation/contact.html">Contact</a></li>
+                <li><a href="navigation/about.html">About us</a></li>
+                <li><a href="navigation/Q&A.html">Q&A</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <h1 class="user-welcome">Welcome to your Dashboard</h1>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3>My Study Groups</h3>
+                <p>You haven't joined any groups yet.</p>
+                <a href="study-group/study-group.html" class="btn">Find Groups</a>
+            </div>
+            <div class="dashboard-card">
+                <h3>Saved Resources</h3>
+                <p>Access your bookmarked study materials.</p>
+                <a href="study-resources/study-resources.html" class="btn">View Resources</a>
+            </div>
+            <div class="dashboard-card">
+                <h3>Tools</h3>
+                <p>Quick access to Pomodoro and other tools.</p>
+                <a href="study-tools/tools.html" class="btn">Open Tools</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Student Helper. All rights reserved.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        // Reuse config - normally shouldn't duplicate but for quick fix:
+        const firebaseConfig = {
+            apiKey: "AIzaSyDqYydmWOGMy0pwSBCHcyI19rqBdu4H5-I",
+            authDomain: "student-innovation-c1428.firebaseapp.com",
+            projectId: "student-innovation-c1428",
+            storageBucket: "student-innovation-c1428.appspot.com",
+            messagingSenderId: "848651583026",
+            appId: "1:848651583026:web:472c042fe45924d9fc462b",
+            measurementId: "G-15QEJW0K3Y"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log("User is logged in:", user.email);
+                document.querySelector('.user-welcome').textContent = `Welcome, ${user.displayName || user.email}`;
+            } else {
+                console.log("User is not logged in, redirecting...");
+                window.location.href = 'auth/login.html';
+            }
+        });
+
+        function logout() {
+            auth.signOut().then(() => {
+                window.location.href = 'homepage.html';
+            });
+        }
+    </script>
+</body>
+
+</html>
