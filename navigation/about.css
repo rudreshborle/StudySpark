@@ -1,87 +1,60 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+@import url('../global.css');
 
 .about-us {
-    padding: 20px;
-    text-align: center;
+    max-width: 960px;
+    margin: var(--space-16) auto;
+    padding: 0 var(--space-6);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.about-us h1 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.about-us h2 {
+    font-size: var(--text-2xl);
+    margin: var(--space-12) 0 var(--space-6);
 }
 
-h2 {
-    font-size: 2em;
-    margin-top: 40px;
-    margin-bottom: 20px;
+.about-us p {
+    color: var(--muted);
+    max-width: 640px;
 }
 
 .team {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-6);
 }
 
 .team-member {
-    flex: 1 1 30%;
-    margin: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
     text-align: center;
+    transition: border-color var(--transition);
+}
+
+.team-member:hover {
+    border-color: #444;
 }
 
 .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
     object-fit: cover;
+    margin: 0 auto var(--space-4);
 }
 
 .team-member h3 {
-    margin: 10px 0 5px;
+    font-size: var(--text-base);
+    margin-bottom: var(--space-1);
 }
 
 .team-member p {
-    color: #777;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 40px;
+    font-size: var(--text-sm);
+    color: var(--muted);
 }

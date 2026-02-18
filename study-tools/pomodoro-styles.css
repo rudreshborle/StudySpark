@@ -1,81 +1,118 @@
+@import url('../global.css');
 
-        body {
-            background-color: #1A1B26;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            text-align: center;
-            transition: background 0.3s, color 0.3s;
-        }
-        .light-mode {
-            background-color: #F8F9FA;
-            color: black;
-        }
-        .header {
-            background-color: #28293D;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .header a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .header a:hover {
-            color: #8B5CF6;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            padding: 50px;
-            flex-wrap: wrap;
-        }
-        .clock-container {
-            background-color: #28293D;
-            padding: 20px;
-            border-radius: 15px;
-            width: 280px;
-            text-align: center;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-            transition: background 0.3s;
-        }
-        .light-mode .clock-container {
-            background-color: white;
-            color: black;
-        }
-        .clock {
-            font-size: 48px;
-            margin: 20px 0;
-        }
-        .buttons button {
-            margin: 10px;
-            padding: 12px 20px;
-            font-size: 16px;
-            background-color: #8B5CF6;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .buttons button:hover {
-            background-color: #6D28D9;
-        }
-        .toggle-btn {
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            background: #8B5CF6;
-            border: none;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .toggle-btn:hover {
-            background: #6D28D9;
-        }
+body {
+    min-height: 100vh;
+    text-align: center;
+}
+
+.page-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+}
+
+.page-header a {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--muted);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+}
+
+.page-header a:hover {
+    color: var(--text-strong);
+    background: var(--surface-2);
+    opacity: 1;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: var(--space-4);
+    right: var(--space-6);
+    padding: var(--space-2) var(--space-4);
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    transition: all var(--transition);
+    z-index: 50;
+}
+
+.toggle-btn:hover {
+    background: var(--border);
+    color: var(--text-strong);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    padding: var(--space-12) var(--space-6);
+    flex-wrap: wrap;
+}
+
+.clock-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    width: 280px;
+    text-align: center;
+    transition: border-color var(--transition);
+}
+
+.clock-container:hover {
+    border-color: #444;
+}
+
+.clock-container h2 {
+    font-size: var(--text-base);
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.clock {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--text-strong);
+    letter-spacing: 0.05em;
+    font-variant-numeric: tabular-nums;
+    margin: var(--space-4) 0;
+}
+
+.buttons {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-4);
+}
+
+.buttons button {
+    padding: var(--space-2) var(--space-4);
+    font-family: var(--font);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.buttons button:hover {
+    background: var(--surface-2);
+    color: var(--text-strong);
+}

@@ -1,78 +1,91 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #02031a;
-    color: #fff;
-}
+@import url('../global.css');
 
-/* Header */
-.header {
+.page-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-4) var(--space-6);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #7b1e36;
-    padding: 15px 20px;
+    justify-content: space-between;
 }
 
 .logo-title {
     display: flex;
     align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--text-strong);
 }
 
 .logo-title img {
-    height: 40px;
-    margin-right: 10px;
+    height: 32px;
+    width: auto;
 }
 
-.logo-title span {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-/* Navigation */
 .nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1em;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--muted);
+    margin: 0 var(--space-2);
+    transition: color var(--transition);
 }
 
 .nav a:hover {
-    color: #df6b5b;
+    color: var(--text-strong);
+    opacity: 1;
 }
 
-/* Main Container */
+/* Main content */
 .container {
+    max-width: 800px;
+    margin: var(--space-12) auto;
+    padding: 0 var(--space-6);
     text-align: center;
-    padding: 50px 20px;
 }
 
-h2, h3 {
-    color: #df6b5b;
+.container h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
 }
 
-/* Buttons */
+.container h3 {
+    font-size: var(--text-xl);
+    color: var(--muted);
+    margin-bottom: var(--space-8);
+    font-weight: 400;
+}
+
+/* Selection buttons */
 .button {
-    background-color: #b52c3e;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-5);
+    margin: var(--space-2);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
     cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-    transition: background 0.3s;
+    transition: all var(--transition);
 }
 
 .button:hover {
-    background-color: #df6b5b;
+    background: var(--surface-2);
+    border-color: #444;
+    color: var(--text-strong);
 }
 
-/* Containers for Dynamic Content */
-#years-container, #subjects-container, #materials-container {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+/* Dynamic content containers */
+#years-container,
+#subjects-container,
+#materials-container {
+    margin-top: var(--space-6);
+    padding: var(--space-6);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
 }
