@@ -1,0 +1,79 @@
+@import url('../global.css');
+
+body {
+    text-align: center;
+}
+
+/* Sections */
+.branch-selection,
+.years,
+.subjects,
+.group-options {
+    padding: var(--space-12) var(--space-6);
+    animation: fadeUp 0.3s ease;
+}
+
+.years,
+.subjects,
+.group-options {
+    display: none;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.branch-selection h1,
+.years h2,
+.subjects h2,
+.group-options h2 {
+    margin-bottom: var(--space-6);
+}
+
+/* Step buttons */
+.themed-button,
+.years button,
+.subjects button,
+.group-options button {
+    display: block;
+    width: 280px;
+    margin: var(--space-3) auto;
+    padding: var(--space-4) var(--space-6);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.themed-button:hover,
+.years button:hover,
+.subjects button:hover,
+.group-options button:hover {
+    background: var(--surface-2);
+    border-color: #444;
+    color: var(--text-strong);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+
+    .themed-button,
+    .years button,
+    .subjects button,
+    .group-options button {
+        width: 90%;
+    }
+}

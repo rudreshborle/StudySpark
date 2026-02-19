@@ -36,15 +36,11 @@ document.getElementById('loginForm').addEventListener('submit', (e) => {
 function fetchUserProfile(uid) {
     db.collection('users').doc(uid).get().then((doc) => {
         if (doc.exists) {
-            const userData = doc.data();
-            onUserLogin({
-                name: userData.name,
-                profilePic: userData.profilePic || 'default-profile.png'
-            });
             // Redirect to Dashboard after login
             window.location.href = "../dashboard.html";
         } else {
-            console.log("No user data found!");
+            // No profile yet — still redirect to dashboard
+            window.location.href = "../dashboard.html";
         }
     }).catch((error) => {
         console.log("Error fetching user data: ", error);

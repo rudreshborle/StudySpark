@@ -1,5 +1,5 @@
 function redirectToTeachers(collegeName) {
-    window.location.href = `findteachers.html?college=${encodeURIComponent(collegeName)}`;
+    window.location.href = `findteacher.html?college=${encodeURIComponent(collegeName)}`;
 }
 
 function searchColleges() {

@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Clock</title>
     <link rel="stylesheet" href="pomodoro-styles.css">
-    
+
 </head>
+
 <body>
-    <button class="toggle-btn" onclick="toggleLightMode()">Toggle Light Mode</button>
-    <div class="header">
-        <a href="#">Home</a>
-        <a href="#">To-Do List</a>
-        <a href="#">Task Manager</a>
-    </div>
+    <div id="global-header"></div>
     <h1>Pomodoro Clock</h1>
     <div class="container">
         <div class="clock-container">
@@ -35,7 +32,11 @@
             </div>
         </div>
     </div>
+    <div id="global-footer"></div>
+    <script>const rootPath = '../';</script>
+    <script src="../components/layout.js" defer></script>
     <script src="pomodoro-script.js"></script>
-    
+
 </body>
+
 </html>

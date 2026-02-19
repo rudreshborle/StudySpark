@@ -375,3 +375,16 @@ footer {
         flex-wrap: wrap;
     }
 }
+
+/* =============================================
+   Light Mode Theme
+   ============================================= */
+body.light-mode {
+    --bg: #ffffff;
+    --surface: #f5f5f5;
+    --surface-2: #eeeeee;
+    --border: #e0e0e0;
+    --muted: #757575;
+    --text: #171717;
+    --text-strong: #0a0a0a;
+}

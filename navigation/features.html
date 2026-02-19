@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - Student Helper</title>
     <link rel="stylesheet" href="features-styles.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">Student Helper</div>
-        <nav>
-            <ul>
-                <li><a href="../homepage.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="updates.html">Updates</a></li>
-            </ul>
-        </nav>
-        <button class="moon-btn" onclick="toggleDarkMode()">🌙</button>
-    </header>
-    
+    <div id="global-header"></div>
+
     <section class="features">
         <h1>Website Features</h1>
         <ul class="feature-list">
@@ -35,11 +27,10 @@
         </ul>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Student Helper. All rights reserved.</p>
-    </footer>
+    <div id="global-footer"></div>
+    <script>const rootPath = '../';</script>
+    <script src="../components/layout.js" defer></script>
 
-    <script src="features-script.js"></script>
-      
 </body>
+
 </html>

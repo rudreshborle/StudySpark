@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meditation Guide</title>
     <link rel="stylesheet" href="meditation-styles.css">
 </head>
+
 <body>
 
     <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-btn" onclick="toggleDarkMode()">Dark Mode</button>
-
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="../homepage.html">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Meditation</a>
-    </div>
+    <div id="global-header"></div>
 
     <!-- Meditation Guide -->
     <div class="container">
@@ -26,12 +21,14 @@
 
             <div class="step-card">
                 <h2>Step 1: Find a Quiet Place</h2>
-                <p>Choose a calm and quiet place where you won’t be disturbed. Sit comfortably with your back straight.</p>
+                <p>Choose a calm and quiet place where you won’t be disturbed. Sit comfortably with your back straight.
+                </p>
             </div>
 
             <div class="step-card">
                 <h2>Step 2: Focus on Your Breath</h2>
-                <p>Close your eyes and take slow, deep breaths. Inhale through your nose, hold for a few seconds, and exhale through your mouth.</p>
+                <p>Close your eyes and take slow, deep breaths. Inhale through your nose, hold for a few seconds, and
+                    exhale through your mouth.</p>
             </div>
 
             <div class="step-card">
@@ -85,8 +82,12 @@
     </div>
 
     <!-- JavaScript for Dark Mode & Timer -->
-    
+
+    <div id="global-footer"></div>
+    <script>const rootPath = '../';</script>
+    <script src="../components/layout.js" defer></script>
     <script src="meditation-script.js"></script>
 
 </body>
+
 </html>

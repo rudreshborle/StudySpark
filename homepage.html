@@ -11,26 +11,7 @@
 </head>
 
 <body>
-    <header>
-        <a href="homepage.html" class="logo">
-            <img src="logo-main.png" alt="Study Spark Logo" class="logo-img">
-            Study Spark
-        </a>
-        <nav>
-            <ul>
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="navigation/features.html">Features</a></li>
-                <li><a href="navigation/blog.html">Blogs</a></li>
-                <li><a href="navigation/contact.html">Contact</a></li>
-                <li><a href="navigation/about.html">About</a></li>
-                <li><a href="navigation/Q&A.html">Q&A</a></li>
-            </ul>
-        </nav>
-        <div class="auth-buttons">
-            <button onclick="window.location.href='auth/login.html'">Login</button>
-            <button onclick="window.location.href='auth/signup.html'">Sign Up</button>
-        </div>
-    </header>
+    <div id="global-header"></div>
 
     <section class="hero">
         <span class="badge">✦ Your Study Companion</span>
@@ -101,11 +82,9 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Study Spark. All rights reserved.</p>
-    </footer>
-
-    <script src="homepage-script.js"></script>
+    <div id="global-footer"></div>
+    <script>const rootPath = './';</script>
+    <script src="components/layout.js" defer></script>
 </body>
 
 </html>

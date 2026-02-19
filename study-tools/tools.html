@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Tools</title>
     <link rel="stylesheet" href="tools-styles.css">
 </head>
+
 <body>
 
     <!-- Header Section -->
-    <div class="header">
-        <a href="../homepage.html">Home</a>
-        <a href="pomodoro.html">Pomodoro Clock</a>
-    </div>
+    <div id="global-header"></div>
 
     <h1>Study Tools</h1>
-    
+
     <div class="container">
         <div class="tool">
             <h2>Pomodoro Clock</h2>
@@ -32,8 +31,12 @@
             <ul id="todoList"></ul>
         </div>
     </div>
-    
+
+    <div id="global-footer"></div>
+    <script>const rootPath = '../';</script>
+    <script src="../components/layout.js" defer></script>
     <script src="tools-script.js"></script>
-    
+
 </body>
+
 </html>

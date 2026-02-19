@@ -1,123 +1,93 @@
-/* Color Palette */
-:root {
-    --dark-navy: #02031a;
-    --dark-red: #7b1e36;
-    --crimson: #b52c3e;
-    --salmon: #df6b5b;
-    --peach: #e48a6f;
-    --white: #ffffff;
-}
+@import url('../global.css');
 
-/* General Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--dark-navy);
-    color: var(--white);
     text-align: center;
 }
 
-/* Header */
-header {
-    background: var(--dark-red);
-    padding: 20px;
-    font-size: 1.5em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 1.8em;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-.profile {
-    background: var(--crimson);
-    color: var(--white);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Hero Section */
+/* Hero */
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    background: var(--crimson);
-}
-
-.hero-content {
-    max-width: 50%;
+    padding: var(--space-16) var(--space-6);
+    border-bottom: 1px solid var(--border);
 }
 
 .hero h1 {
-    font-size: 2.5em;
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
 }
 
 .hero p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto var(--space-6);
 }
 
 .cta {
-    background: var(--salmon);
-    color: var(--white);
-    padding: 12px 20px;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-8);
+    background: var(--text-strong);
+    color: var(--bg);
+    font-family: var(--font);
+    font-size: var(--text-sm);
+    font-weight: 600;
     border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
+    border-radius: var(--radius-full);
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background var(--transition);
 }
 
 .cta:hover {
-    background: var(--peach);
+    background: var(--text);
 }
 
-.hero-image img {
-    max-width: 300px;
-}
-
-/* Features Section */
+/* Feature cards */
 .features {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px;
-    background: var(--salmon);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-4);
+    padding: var(--space-12) var(--space-6);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .feature {
-    max-width: 30%;
-    padding: 20px;
-    background: var(--peach);
-    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: border-color var(--transition);
 }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    padding: 15px;
-    background: var(--dark-red);
+.feature:hover {
+    border-color: #444;
+}
+
+.feature h2 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: var(--text-sm);
+}
+
+/* Profile button */
+.profile {
+    padding: var(--space-2) var(--space-4);
+    background: transparent;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.profile:hover {
+    background: var(--surface-2);
+    color: var(--text-strong);
 }

@@ -1,22 +1,99 @@
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #09122C; color: #FFFFFF; line-height: 1.6; }
-        header { background-color: #872341; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: #FFFFFF; }
-        nav ul { list-style: none; display: flex; }
-        nav ul li { margin: 0 15px; }
-        nav ul li a { text-decoration: none; color: #FFFFFF; padding: 5px 10px; border-radius: 5px; transition: background 0.3s; }
-        nav ul li a:hover { background-color: #BE3144; }
+@import url('../global.css');
 
-        .hero { text-align: center; padding: 60px 20px; background-color: #BE3144; color: #FFFFFF; }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; }
-        .search-container { margin-top: 20px; }
-        .search-container input { padding: 10px; width: 300px; border-radius: 5px; border: none; }
+/* Hero */
+.hero {
+  text-align: center;
+  padding: var(--space-16) var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
 
-        .college-container { padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .college-card { background-color: #E17564; border-radius: 10px; padding: 20px; color: #09122C; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
-        .college-card:hover { transform: translateY(-10px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
-        .college-card button { margin-top: 10px; padding: 10px 15px; background-color: #BE3144; color: #FFFFFF; border: none; border-radius: 5px; cursor: pointer; }
-        .college-card button:hover { background-color: #872341; }
+.hero h1 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-2);
+}
 
-        footer { text-align: center; padding: 15px 0; background-color: #872341; color: #FFFFFF; margin-top: 40px; }
+.hero p {
+  color: var(--muted);
+  margin-bottom: var(--space-6);
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.search-container input {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  color: var(--text-strong);
+  font-family: var(--font);
+  font-size: var(--text-sm);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.search-container input:focus {
+  border-color: #555;
+}
+
+.search-container input::placeholder {
+  color: var(--muted);
+}
+
+/* College grid */
+.college-container {
+  padding: var(--space-8) var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.college-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.college-card:hover {
+  border-color: #444;
+  transform: translateY(-2px);
+}
+
+.college-card h2 {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+}
+
+.college-card p {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.college-card button {
+  padding: var(--space-2) var(--space-5);
+  background: var(--text-strong);
+  color: var(--bg);
+  font-family: var(--font);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.college-card button:hover {
+  background: var(--text);
+}

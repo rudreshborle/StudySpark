@@ -5,85 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Study Spark</title>
-    <link rel="stylesheet" href="homepage-styles.css">
-    <style>
-        .dashboard-container {
-            padding: 50px 20px;
-            text-align: center;
-        }
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="dashboard.css">
 
-        .user-welcome {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .dashboard-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-
-        .dashboard-card h3 {
-            margin-top: 0;
-            color: #007bff;
-        }
-
-        .logout-btn {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-    </style>
+    <!-- Firebase SDKs (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo-main.png" alt="Logo" class="logo-img">
-            Study Spark
-        </div>
-        <nav>
-            <ul>
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="navigation/features.html">Features</a></li>
-                <li><a href="navigation/blog.html">Blogs</a></li>
-                <li><a href="navigation/contact.html">Contact</a></li>
-                <li><a href="navigation/about.html">About us</a></li>
-                <li><a href="navigation/Q&A.html">Q&A</a></li>
-            </ul>
-        </nav>
-        <div class="auth-buttons">
-            <button onclick="logout()" class="logout-btn">Logout</button>
-        </div>
-    </header>
+    <div id="global-header"></div>
+    <!-- Note: Header has its own Auth Buttons, but Dashboard specifically needs Logout. 
+         We might need to adjust header to show "Logout" if logged in, but for now 
+         Dashboard has its own Logout button in the body or we rely on header. 
+         The original dashboard had a Logout button in the header area. 
+         I will keep the Logout button in the main body for now or let the header handle it if I update header logic later.
+         For this refactor, I'll add a specific Logout action in the dashboard content to be safe. -->
 
     <div class="dashboard-container">
         <h1 class="user-welcome">Welcome to your Dashboard</h1>
+        <button onclick="logout()" class="logout-btn">Logout</button>
 
         <div class="dashboard-grid">
             <div class="dashboard-card">
@@ -104,43 +47,14 @@
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Student Helper. All rights reserved.</p>
-    </footer>
+    <div id="global-footer"></div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script>
-        // Reuse config - normally shouldn't duplicate but for quick fix:
-        const firebaseConfig = {
-            apiKey: "AIzaSyDqYydmWOGMy0pwSBCHcyI19rqBdu4H5-I",
-            authDomain: "student-innovation-c1428.firebaseapp.com",
-            projectId: "student-innovation-c1428",
-            storageBucket: "student-innovation-c1428.appspot.com",
-            messagingSenderId: "848651583026",
-            appId: "1:848651583026:web:472c042fe45924d9fc462b",
-            measurementId: "G-15QEJW0K3Y"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
+    <!-- Scripts -->
+    <script src="components/firebase-config.js"></script> <!-- Config must load first -->
+    <script src="dashboard-script.js"></script>
 
-        auth.onAuthStateChanged((user) => {
-            if (user) {
-                console.log("User is logged in:", user.email);
-                document.querySelector('.user-welcome').textContent = `Welcome, ${user.displayName || user.email}`;
-            } else {
-                console.log("User is not logged in, redirecting...");
-                window.location.href = 'auth/login.html';
-            }
-        });
-
-        function logout() {
-            auth.signOut().then(() => {
-                window.location.href = 'homepage.html';
-            });
-        }
-    </script>
+    <script>const rootPath = './';</script>
+    <script src="components/layout.js" defer></script>
 </body>
 
 </html>
