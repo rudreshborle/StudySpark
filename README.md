@@ -1,5 +1,7 @@
 # 📚 Study Spark
 
+> 🏆 Built at **Techathon 2025**
+
 **Study Spark** is a student-focused web platform designed to help learners find solutions to academic challenges — from connecting with teachers and joining study groups to boosting productivity with built-in tools.
 
 ---
