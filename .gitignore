@@ -1,0 +1,14 @@
+# General
+.DS_Store
+node_modules/
+dist/
+.env
+
+# Firebase
+student-innovation-c1428-firebase-adminsdk-fbsvc-3bc17cb0cf.json
+firebase-debug.log
+.firebase/
+
+# Local Firebase config files (contain secrets — copy from .example.js to use)
+firebase-config.js
+auth/firebase-config-module.js

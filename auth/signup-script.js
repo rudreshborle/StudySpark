@@ -4,16 +4,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebas
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 
-// Firebase Configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDqYydmWOGMy0pwSBCHcyI19rqBdu4H5-I",
-    authDomain: "student-innovation-c1428.firebaseapp.com",
-    projectId: "student-innovation-c1428",
-    storageBucket: "student-innovation-c1428.appspot.com",
-    messagingSenderId: "848651583026",
-    appId: "1:848651583026:web:472c042fe45924d9fc462b",
-    measurementId: "G-15QEJW0K3Y"
-};
+// Firebase Configuration — loaded from gitignored firebase-config-module.js
+// Copy firebase-config-module.example.js → firebase-config-module.js to set this up locally.
+import { firebaseConfig } from "./firebase-config-module.js";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

@@ -1,17 +1,7 @@
 
-// Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDqYydmWOGMy0pwSBCHcyI19rqBdu4H5-I",
-    authDomain: "student-innovation-c1428.firebaseapp.com",
-    projectId: "student-innovation-c1428",
-    storageBucket: "student-innovation-c1428.appspot.com",
-    messagingSenderId: "848651583026",
-    appId: "1:848651583026:web:472c042fe45924d9fc462b",
-    measurementId: "G-15QEJW0K3Y"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Firebase is initialized by firebase-config.js loaded in the HTML.
+// auth and db are set as globals there via window.auth / window.db,
+// or we read them from the already-initialized Firebase app.
 const auth = firebase.auth();
 const db = firebase.firestore();
 
